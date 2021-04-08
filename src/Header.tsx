@@ -12,19 +12,30 @@ const HeaderSection = styled.section`
   align-items: center;
   height: 100vh;
   color: white;
-  padding-top: 50px;
 `;
 
 const HeaderTitle = styled.h1`
   font-size: 100px;
   margin: 0;
+  @media only screen and (max-width: 921px) {
+    font-size: 70px;
+  }
+  @media only screen and (max-width: 481px) {
+    color: black;
+  }
 `;
 
 const HeaderSubtitle = styled.p`
-  font-size: 80px;
+  font-size: 60px;
   margin: 0;
   text-align: center;
   font-weight: 500;
+  @media only screen and (max-width: 921px) {
+    font-size: 40px;
+  }
+  @media only screen and (max-width: 481px) {
+    color: black;
+  }
 `;
 const HeaderButton = styled.button`
   background: #ffffff;
@@ -38,6 +49,10 @@ const HeaderButton = styled.button`
   color: #0b0b0b;
   letter-spacing: -0.24px;
   margin-top: 28px;
+  @media only screen and (max-width: 481px) {
+    color: white;
+    background: black;
+  }
 `;
 
 const Header: FC = () => {
