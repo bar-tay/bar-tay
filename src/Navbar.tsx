@@ -1,31 +1,52 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import logo from "./logos/Logo_grau.png";
+import burgerImg from "./logos/menu.png";
 
 const NavSection = styled.section`
   display: flex;
   width: inherit;
   align-items: center;
-  justify-content: space-between;
-  background: rgba(216, 216, 216, 0.12);
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.36);
   height: 106px;
   position: fixed;
   top: 0;
+  z-index: 10;
+  @media only screen and (max-width: 921px) {
+    justify-content: space-between;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+  }
 `;
 
 const StyledNavbar = styled.nav`
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
 `;
+
 const StyledList = styled.ul`
+  width: 100%;
   list-style: none;
   display: flex;
   flex-direction: row;
-  padding-inline-start: 0px;
+  justify-content: space-around;
+  @media only screen and (max-width: 929px) {
+    display: none;
+  }
+`;
+const BurgerMenu = styled.img`
+  @media only screen and (min-width: 930px) {
+    display: none;
+  }
+  width: 50px;
+  margin-right: 10px;
 `;
 const StyledListItem = styled.li`
-  margin-right: 60px;
   font-family: Graphik-Medium;
   font-size: 19px;
   color: #ffffff;
@@ -45,12 +66,13 @@ const Navbar: FC = () => {
       <Logo src={logo}></Logo>
       <StyledNavbar>
         <StyledList>
+          <StyledListItem>Service</StyledListItem>
           <StyledListItem>Über uns</StyledListItem>
-          <StyledListItem>Spezialanfertigungen</StyledListItem>
-          <StyledListItem>Beratung</StyledListItem>
-          <StyledListItem>Beratung</StyledListItem>
+          <StyledListItem>Online Beratung</StyledListItem>
+          <StyledListItem>Betonrechner</StyledListItem>
         </StyledList>
-      </StyledNavbar>
+      </StyledNavbar>{" "}
+      <BurgerMenu src={burgerImg}></BurgerMenu>
     </NavSection>
   );
 };
