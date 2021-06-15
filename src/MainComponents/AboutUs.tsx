@@ -5,7 +5,7 @@ import image2 from "../images/Bild_11.jpg";
 import image3 from "../images/Bild_12.jpg";
 import image4 from "../images/Bild_16.jpg";
 import image5 from "../images/Bild_19.jpg";
-import image6 from "../images/Bild_29.jpg";
+import image6 from "../images/Bild_29.jpeg";
 import image7 from "../images/Bild_36.jpg";
 import image8 from "../images/Bild_37.jpg";
 
@@ -19,9 +19,11 @@ const imageArr: string[] = [
   image7,
   image8,
 ];
+
 const AboutContainer = styled.article`
   text-align: center;
 `;
+
 const AboutTitle = styled.h2`
   font-family: Graphik-Semibold;
   font-size: 40px;
@@ -51,6 +53,12 @@ const AboutImgContainer = styled.section`
 const AboutImg = styled.img`
   width: 25%;
   object-fit: cover;
+  transition: transform 0.2s; /* Animation */
+  overflow: hidden;
+  &:hover {
+    transform: scale(1.1);
+  }
+
   @media only screen and (max-width: 790px) {
     width: 50%;
   }
@@ -76,6 +84,7 @@ const AboutGalleryButton = styled.button`
   border: none;
   outline: none;
 `;
+
 const AboutUs: FC = () => {
   return (
     <AboutContainer>

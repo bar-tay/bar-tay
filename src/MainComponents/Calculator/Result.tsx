@@ -36,7 +36,13 @@ const Button = styled.button`
   width: 100%;
   margin-top: 20px;
 `;
-
+const StyledP = styled.p`
+  font-family: Graphik-Regular;
+  font-size: 18px;
+  color: #0b090a;
+  letter-spacing: -0.24px;
+  text-align: center;
+`;
 export default function Result(props: IResultProps) {
   function prevStepClick(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -47,9 +53,13 @@ export default function Result(props: IResultProps) {
 
   return (
     <>
-      <StyledTitle>Ergebniss der Menge für ihr Projekt </StyledTitle>
+      <StyledTitle>Ihr Projekt </StyledTitle>
       <StyledSubTitle>Projekt: {props.values.project} </StyledSubTitle>
-      <p>Sie benötigen {Math.round(props.result * 100) / 100}m3 Beton.</p>
+      <StyledP>
+        Für ihr Projekt benötigen Sie{" "}
+        <strong>{Math.round(props.result * 100) / 100}m3 </strong>
+        Beton.
+      </StyledP>
       <Button onClick={prevStepClick}> Daten ändern</Button>
     </>
   );

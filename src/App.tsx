@@ -1,18 +1,13 @@
 import React from "react";
-import Wrapper from "./Wrapper";
-import Header from "./Header";
-import Navbar from "./Navbar";
-import Main from "./Main";
-import Footer from "./Footer";
+
+import Home from "./Home";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Wrapper>
-      <Navbar />
-      <Header />
-      <Main />
-      <Footer/>
-    </Wrapper>
+    <Switch>
+      <Route exact path="/" component={Home} />
+    </Switch>
   );
 }
 

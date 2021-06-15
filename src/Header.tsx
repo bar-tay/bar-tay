@@ -6,6 +6,7 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderSection = styled.section`
+  margin-top: 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,10 +27,11 @@ const HeaderTitle = styled.h1`
 `;
 
 const HeaderSubtitle = styled.p`
-  font-size: 60px;
+  font-size: 80px;
   margin: 0;
   text-align: center;
   font-weight: 500;
+
   @media only screen and (max-width: 921px) {
     font-size: 40px;
   }

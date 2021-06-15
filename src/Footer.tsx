@@ -79,7 +79,7 @@ export default function Footer() {
   const creator: any[] = [
     "Verantwortlich für diese Seiten:",
     "Barkley Taylor/Meg91",
-    <a href="">Impressum</a>,
+    <a href="hier">Impressum</a>,
   ];
   return (
     <StyledFooter>
@@ -90,17 +90,17 @@ export default function Footer() {
         <ContentContainer>
           <Wrapper>
             {address.map((el) => (
-              <StyledSpan>{el}</StyledSpan>
+              <StyledSpan key={el}>{el}</StyledSpan>
             ))}
           </Wrapper>
           <Wrapper>
             {contact.map((el) => (
-              <StyledSpan>{el}</StyledSpan>
+              <StyledSpan key={el}>{el}</StyledSpan>
             ))}
           </Wrapper>
           <Wrapper>
             {creator.map((el) => (
-              <StyledSpan>{el}</StyledSpan>
+              <StyledSpan key={el}>{el}</StyledSpan>
             ))}
           </Wrapper>
         </ContentContainer>

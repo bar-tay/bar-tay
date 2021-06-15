@@ -48,6 +48,7 @@ export default function Calculator() {
     winkel: 0,
     radius: 0,
   });
+
   const [result, setResult] = React.useState(0);
 
   function nextStep() {

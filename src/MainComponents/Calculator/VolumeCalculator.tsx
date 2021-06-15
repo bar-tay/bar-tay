@@ -43,15 +43,23 @@ const ChoiceButton = styled(Button)`
   background: none;
   font-size: 16px;
   width: 100%;
+  cursor: pointer;
+  pointer-events: inherit;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 `;
 const StyledInput = styled(Input)`
   margin: 5px;
 `;
+
 const StyledWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
 `;
+
 const InputFieldConatiner = styled.div`
   width: 90%;
   height: 200px;
