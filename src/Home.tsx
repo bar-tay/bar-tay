@@ -7,12 +7,14 @@ import Footer from "./Footer";
 
 function Home() {
   return (
-    <Wrapper>
-      <Navbar />
-      <Header />
-      <Main />
-      <Footer />
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Navbar />
+        <Header />
+        <Main />
+        <Footer />
+      </Wrapper>
+    </>
   );
 }
 
