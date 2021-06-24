@@ -1,15 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-<<<<<<< Updated upstream
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-=======
     "lib": ["dom", "dom.iterable", "esnext"],
->>>>>>> Stashed changes
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,15 +14,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-<<<<<<< Updated upstream
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
-=======
-    "jsx": "react"
-  },
-  "include": ["src", "models"]
->>>>>>> Stashed changes
+  "include": ["src", "models", "./node_modules/typescript/lib"]
 }

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logo from "./logos/logo_weiß.png";
 import loginIcon from "./logos/login-32.png";
 import { Link } from "react-router-dom";
+
 const NavSection = styled.section`
   position: relative;
   display: flex;
@@ -14,9 +15,10 @@ const NavSection = styled.section`
   position: fixed;
   top: 0;
   z-index: 10;
+
   @media only screen and (max-width: 1100px) {
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     position: relative;
     margin-left: -50vw;
     left: 50%;
@@ -49,9 +51,9 @@ const StyledListItem = styled.li`
   font-size: 19px;
   color: #ffffff;
   letter-spacing: -0.23px;
+  margin: 8px;
 
   &:last-child {
-    margin-right: 10px;
   }
 
   &:hover {
@@ -70,6 +72,7 @@ const StyledListIcon = styled.img`
   color: #ffffff;
   height: 32px;
   width: 32px;
+  margin-right: 10px;
 
   &:hover {
     border-bottom: solid 2px white;
@@ -150,7 +153,7 @@ const Navbar: FC = () => {
           <StyledListItem>Service</StyledListItem>
           <StyledListItem>Betonrechner</StyledListItem>
           <StyledListItem>Über uns</StyledListItem>
-          <StyledListItem>Online Beratung</StyledListItem>
+          <StyledListItem> Beratung</StyledListItem>
           <StyledLink to="/login">
             <StyledListIcon src={loginIcon} />
           </StyledLink>
@@ -166,7 +169,7 @@ const Navbar: FC = () => {
           <MenuItems>Service</MenuItems>
           <MenuItems>Betonrechner</MenuItems>
           <MenuItems>Über uns</MenuItems>
-          <MenuItems>Online Beratung</MenuItems>
+          <MenuItems>Beratung</MenuItems>
         </Menu>
       )}
     </NavSection>

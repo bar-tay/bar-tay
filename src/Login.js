@@ -15,8 +15,24 @@ const Container = styled.section`
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  padding: 12px 20px;
+`;
+const StyledInput = styled.input`
+  margin: 15px 0;
+  padding: 12px 20px;
+  margin: 8px 0;
 `;
 
+const StyledButton = styled.div`
+  background-color: #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+`;
 const Login = () => {
   const history = useHistory();
   const [active, setActive] = useState(false);
@@ -35,6 +51,10 @@ const Login = () => {
   const onSubmitRegistered = async (event) => {
     try {
       event.preventDefault();
+      if (loginValues.password.length < 6) {
+        console.log("hey");
+        return alert("Passwort muss mindestens 6 Zeichen haben");
+      }
       const registered = {
         fullName: loginValues.fullName,
         username: loginValues.username,
@@ -63,6 +83,7 @@ const Login = () => {
   const onSubmitLogin = async (event) => {
     try {
       event.preventDefault();
+
       const login = {
         username: loginValues.username,
         password: loginValues.password,
@@ -84,64 +105,69 @@ const Login = () => {
   };
   return (
     <>
-      <Navbar></Navbar>
       <Container>
+        <Navbar />
         {active && (
           <>
             <StyledForm>
               <h1>Login</h1>
-              <input
-                placeholder="username"
+              <StyledInput
+                placeholder="Nutzername"
                 name="username"
                 onChange={handleChange}
-              ></input>
-              <input
-                placeholder="password"
+              ></StyledInput>
+              <StyledInput
+                placeholder="Passwort"
                 name="password"
                 onChange={handleChange}
-              ></input>
-              <button onClick={onSubmitLogin}> Einloggen</button>
+              ></StyledInput>
+              <StyledButton onClick={onSubmitLogin}>Einloggen</StyledButton>
             </StyledForm>
-            <button onClick={() => setActive(!active)}>
+            <StyledButton onClick={() => setActive(!active)}>
               Noch nicht registriert?
-            </button>
+            </StyledButton>
           </>
         )}
         {!active && (
           <>
             <StyledForm>
               <h1>Sign-up</h1>
-              <input
+              <StyledInput
                 placeholder="Name"
                 name="fullName"
                 onChange={handleChange}
-              ></input>
+              ></StyledInput>
 
-              <input
+              <StyledInput
                 placeholder="Nutzername"
                 name="username"
                 onChange={handleChange}
-              ></input>
-              <input
+              ></StyledInput>
+              <StyledInput
+                type="number"
                 placeholder="Alter"
                 name="age"
                 onChange={handleChange}
-              ></input>
-              <input
+              ></StyledInput>
+              <StyledInput
                 placeholder="Email Adresse"
                 name="email"
                 onChange={handleChange}
-              ></input>
-              <input
-                placeholder="Passwort"
+              ></StyledInput>
+              <StyledInput
+                type="password"
+                placeholder="Password"
                 name="password"
                 onChange={handleChange}
-              ></input>
-              <button onClick={onSubmitRegistered}> Registrieren</button>
+                autoComplete="current-password"
+              ></StyledInput>
+              <StyledButton onClick={onSubmitRegistered}>
+                Registrieren
+              </StyledButton>
             </StyledForm>
-            <button onClick={() => setActive(!active)}>
+            <StyledButton onClick={() => setActive(!active)}>
               Bereits registriert?
-            </button>
+            </StyledButton>
           </>
         )}
       </Container>
